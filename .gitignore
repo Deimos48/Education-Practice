@@ -29,9 +29,9 @@ __pycache__/
 .venv/
 venv/
 *.class
+out/
 build/
 target/
-out/
 .env
 .env.*
 !.env.example
