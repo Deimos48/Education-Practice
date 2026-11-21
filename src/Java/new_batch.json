@@ -1,0 +1,13 @@
+{
+  "id": "B4",
+  "name": "Партия 04",
+  "head_count": 20,
+  "start_date": "2026-11-01",
+  "target_date": "2027-05-01",
+  "temp_min": 16,
+  "temp_max": 18,
+  "humidity_min": 60,
+  "humidity_max": 65,
+  "chamber_id": null,
+  "status": "awaiting"
+}

@@ -1,0 +1,132 @@
+{
+  "batches": [
+    {
+      "id": "B1",
+      "name": "Партия 01",
+      "head_count": 20,
+      "start_date": "2026-05-01",
+      "target_date": "2026-11-10",
+      "temp_min": 11,
+      "temp_max": 14,
+      "humidity_min": 80,
+      "humidity_max": 90,
+      "chamber_id": "C1",
+      "status": "ripening"
+    },
+    {
+      "id": "B2",
+      "name": "Партия 02",
+      "head_count": 20,
+      "start_date": "2026-11-01",
+      "target_date": "2027-05-01",
+      "temp_min": 12,
+      "temp_max": 14,
+      "humidity_min": 80,
+      "humidity_max": 88,
+      "chamber_id": null,
+      "status": "awaiting"
+    },
+    {
+      "id": "B3",
+      "name": "Партия 03",
+      "head_count": 20,
+      "start_date": "2026-11-01",
+      "target_date": "2027-05-01",
+      "temp_min": 8,
+      "temp_max": 10,
+      "humidity_min": 85,
+      "humidity_max": 95,
+      "chamber_id": null,
+      "status": "awaiting"
+    }
+  ],
+  "chambers": [
+    {
+      "id": "C1",
+      "name": "Камера 1",
+      "temperature": 12,
+      "humidity": 85
+    },
+    {
+      "id": "C2",
+      "name": "Камера 2",
+      "temperature": 9,
+      "humidity": 90
+    },
+    {
+      "id": "C3",
+      "name": "Камера 3",
+      "temperature": 13,
+      "humidity": 82
+    }
+  ],
+  "operation_types": [
+    {
+      "id": "T1",
+      "name": "Осмотр голов"
+    },
+    {
+      "id": "T2",
+      "name": "Переворачивание голов"
+    },
+    {
+      "id": "T3",
+      "name": "Обработка поверхности"
+    }
+  ],
+  "batch_operations": [
+    {
+      "id": "W1",
+      "batch_id": "B1",
+      "operation_type_id": "T1",
+      "planned_date": "2026-10-31",
+      "completed_date": null
+    },
+    {
+      "id": "W2",
+      "batch_id": "B1",
+      "operation_type_id": "T2",
+      "planned_date": "2026-11-01",
+      "completed_date": null
+    },
+    {
+      "id": "W3",
+      "batch_id": "B1",
+      "operation_type_id": "T3",
+      "planned_date": "2026-11-02",
+      "completed_date": null
+    },
+    {
+      "id": "W4",
+      "batch_id": "B1",
+      "operation_type_id": "T1",
+      "planned_date": "2026-10-30",
+      "completed_date": "2026-10-30"
+    },
+    {
+      "id": "W5",
+      "batch_id": "B2",
+      "operation_type_id": "T1",
+      "planned_date": "2026-11-02",
+      "completed_date": null
+    }
+  ],
+  "measurements": [
+    {
+      "id": "M1",
+      "batch_id": "B1",
+      "measured_at": "2026-11-01T09:00:00",
+      "temperature": 12,
+      "humidity": 85
+    }
+  ],
+  "quality_checks": [
+    {
+      "id": "Q1",
+      "batch_id": "B1",
+      "checked_at": "2026-10-31T10:00:00",
+      "decision": "continue",
+      "comment": "Выдержку продолжить до плановой оценки."
+    }
+  ]
+}
