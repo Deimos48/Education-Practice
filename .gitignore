@@ -37,3 +37,4 @@ target/
 !.env.example
 src/result.json
 !src/java/lib/gson-2.14.0.jar
+docs/~$чет_ИКБО-10-24_РахманинМО.docx
