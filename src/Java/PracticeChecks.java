@@ -13,6 +13,20 @@ public class PracticeChecks {
         check(data.schedule().buildWorklist(today).equals(List.of(
                 new WorkSchedule.Entry("W1", "просрочено"), new WorkSchedule.Entry("W2", "сегодня"))), "Сроки работ");
         check(data.schedule().buildWorklist(today.minusDays(4)).isEmpty(), "Пустое расписание");
+        for (double humidity : new double[]{0, 100}) {
+            Measurement reading = new Measurement("M", "X", today.atStartOfDay(), -2, humidity);
+            check(reading.humidity() == humidity, "Допустимая граница влажности");
+        }
+        for (double[] invalid : new double[][]{
+                {Double.NaN, 50}, {Double.POSITIVE_INFINITY, 50}, {16, Double.NaN},
+                {16, Double.NEGATIVE_INFINITY}, {16, -0.1}, {16, 100.1}}) {
+            try {
+                new Measurement("M", "X", today.atStartOfDay(), invalid[0], invalid[1]);
+                throw new AssertionError("Приняты недопустимые показания " + Arrays.toString(invalid));
+            } catch (IllegalArgumentException expected) {
+                // Замер с недопустимыми показаниями отклонён.
+            }
+        }
         Path card = Path.of("new_batch.json");
         check(data.register(card).equals("B4"), "Регистрация");
         var selected = data.selectChambers();

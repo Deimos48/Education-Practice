@@ -6,6 +6,9 @@ final class Measurement extends BatchEvent implements ClimateReading {
 
     Measurement(String id, String batchId, LocalDateTime recordedAt, double temperature, double humidity) {
         super(id, batchId, recordedAt);
+        if (!Double.isFinite(temperature) || !Double.isFinite(humidity) || humidity < 0 || humidity > 100) {
+            throw new IllegalArgumentException("Недопустимые показания замера " + id);
+        }
         this.temperature = temperature;
         this.humidity = humidity;
     }
