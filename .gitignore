@@ -36,3 +36,4 @@ target/
 .env.*
 !.env.example
 src/result.json
+!src/java/lib/gson-2.14.0.jar
